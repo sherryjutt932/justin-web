@@ -113,7 +113,7 @@ export default function Hero() {
           You Achieve Results
         </div>
       </div>
-      
+
       <div
         ref={heroBg}
         style={{ clipPath: "circle(0% at 50% 50%)" }}
