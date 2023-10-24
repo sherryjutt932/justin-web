@@ -14,18 +14,15 @@ export default function AboutUs() {
   const aboutSec = useRef();
 
   useEffect(() => {
-    const tl = gsap.timeline();
-    tl.to(aboutRef.current, {
+    gsap.to(aboutRef.current, {
       xPercent: -100,
       ease: "none",
       scrollTrigger: {
         trigger: aboutSec.current,
         start: "top top",
+        // end: () => "+=" + aboutSec.current.offsetWidth,
         scrub: true,
-        pin: true,
-        onUpdate: (self) => {
-          console.log("ScrollTrigger onUpdate", self);
-        },
+        // pin: true,
       },
     });
   }, []);
