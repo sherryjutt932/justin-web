@@ -17,17 +17,19 @@ module.exports = {
       'NohemiB': ['Nohemi-Bold', 'system-ui'],
       'NohemiSB': ['Nohemi-SemiBold', 'system-ui'],
       'NohemiBL': ['Nohemi-Black', 'system-ui'],
+      'Satoshi': ['Satoshi-Regular', 'system-ui'],
+        'Satoshi-Light': ['Satoshi-Light', 'system-ui'],
+        'Satoshi-Medium': ['Satoshi-Medium', 'system-ui'],
+        'Satoshi-Bold': ['Satoshi-Bold', 'system-ui'],
+        'Satoshi-Black': ['Satoshi-Black', 'system-ui'],
     },
     extend: {
       colors: {
-        // normal: {
-        //   DEFAULT: '#fff',
-        //   hover: '#e7e7e7',
-        //   text: '#222',
-        //   outline: "#adafbc",
-        //   shadow: "#b3b3b9",
-        //   border: "#222",
-        // },
+        gray: {
+          DEFAULT: '#595959',
+          "79": '#797979',
+          'c5':'#C5C5C5'
+        },
         "main": "#EAEAEA",
         "sec": "#FF2626",
         "dark": "#000000",

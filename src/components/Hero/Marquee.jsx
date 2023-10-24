@@ -1,55 +1,53 @@
-import React, { Children, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
-export default function Testimonials({ children, direction, speed, ...props }) {
+export default function Marquee({ children, direction, speed, ...props }) {
   const marquee = useRef();
   const first = useRef();
   const second = useRef();
+
   let xPercent = 0;
 
-  const rightAnimation = () => {
-    if (xPercent > 0) {
-      xPercent = -100;
-    }
+  const animateMarquee = () => {
+    xPercent = direction === "left" ? (xPercent - speed / 10) : (xPercent + speed / 10);
+    xPercent = (xPercent <= -100) ? 0 : ((xPercent >= 0) ? -100 : xPercent);
+
     gsap.to([first.current, second.current], {
-      xPercent: xPercent,
+      xPercent,
       duration: 0,
+      ease: "none",
     });
-    requestAnimationFrame(rightAnimation);
-    xPercent += speed / 10;
+
+    requestAnimationFrame(animateMarquee);
   };
 
-  const leftAnimation = () => {
-    if (xPercent < -100) {
-      xPercent = 0;
-    }
-    gsap.to([first.current, second.current], {
-      xPercent: xPercent,
-      duration: 0,
-    });
-    requestAnimationFrame(leftAnimation);
-    xPercent -= speed / 10;
+  const setSecondPosition = () => {
+    // Set the initial position of the second div based on the direction
+    gsap.set(second.current, { left: direction === "left" ? "100%" : "-100%" });
   };
 
   useEffect(() => {
-    if (direction === "left") {
-      requestAnimationFrame(leftAnimation);
-    } else {
-      requestAnimationFrame(rightAnimation);
-    }
+    // Set the initial position of the second div
+    setSecondPosition();
+    
+    // Start the animation when the component mounts
+    animateMarquee();
+
+    // Cleanup on component unmount
+    return () => {
+      // Stop the animation when the component is unmounted
+      cancelAnimationFrame(animateMarquee);
+    };
   }, [direction]);
 
   useEffect(() => {
     const handleResize = () => {
       // On resize, reposition the second div based on the first div's width
-      gsap.set(second.current, { left: first.current.offsetWidth});
+      setSecondPosition();
     };
 
     // Attach the event listener for resize
     window.addEventListener("resize", handleResize);
-
-    // Initial setup
-    gsap.set(second.current, { left: first.current.offsetWidth});
 
     // Cleanup on component unmount
     return () => {
@@ -58,12 +56,12 @@ export default function Testimonials({ children, direction, speed, ...props }) {
   }, []);
 
   return (
-    <div className="w-fit overflow-hidden inline-block bg-[#fa1b1b] text-white box-border leading-none align-bottom">
-      <div ref={marquee} className="h-full relative">
-        <div className="w-42 h-fit w-fit" ref={first}>
+    <div className="overflow-hidden inline-block rounded-full text-light box-border leading-none align-bottom bg-sec">
+      <div ref={marquee} className="h-fit relative whitespace-nowrap">
+        <div  ref={first} className=" w-42 h-fit pl-8 pt-3">
           {children}
         </div>
-        <div ref={second} className=" w-42 h-fit w-full absolute top-0">
+        <div ref={second} className="  w-42 h-fit absolute top-0 pl-8 pt-3">
           {children}
         </div>
       </div>
