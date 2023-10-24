@@ -24,6 +24,10 @@ module.exports = {
         'Satoshi-Black': ['Satoshi-Black', 'system-ui'],
     },
     extend: {
+      screens: {
+        'm14': '1380px',
+        // => @media (min-width: 1380px) { ... }
+      },
       colors: {
         gray: {
           DEFAULT: '#595959',

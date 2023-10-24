@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import Label from "./Label";
 import Box from "./Box";
 import { gsap } from "gsap";
@@ -100,7 +100,7 @@ useEffect(() => {
 }, []);
 
   return (
-    <div ref={skillsRef} className="min-h-screen w-full flex flex-col text-[80px] leading-[95px] text-white text-center  mt-16 2xl:mt-0 py-16 2xl:py-32 gap-16">
+    <div ref={skillsRef} className="z-10 min-h-screen w-full flex flex-col text-[80px] leading-[95px] text-white text-center  mt-16 2xl:mt-0 py-16 2xl:py-32 gap-16">
       {/* heading */}
       <div ref={labelsCon} className=" w-full">
         <div className="relative w-fit mx-auto">

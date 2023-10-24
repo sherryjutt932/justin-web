@@ -11,7 +11,7 @@ export default function Icon({ children, setActive, index, isActive, theme }) {
     relative rounded-full overflow-hidden group`}
     >
       <div
-        className={`text-base px-4 py-1 cursor-pointer transition-all duration-400 group-hover:scale-75`}
+        className={`text-base px-4 py-1 cursor-pointer transition-all duration-500 group-hover:scale-75`}
         onClick={() => {
           (index>=0) && setActive(index);
         }}
@@ -19,7 +19,7 @@ export default function Icon({ children, setActive, index, isActive, theme }) {
         {children}
       </div>
       <div
-        className={`bg-[#fa1b1b] text-white text-base px-4 py-1 rounded-full cursor-pointer transition-all duration-400 group-hover:top-0 top-[105%] left-1/2 -translate-x-1/2 absolute `}
+        className={`bg-[#fa1b1b] text-white text-base px-4 py-1 rounded-full cursor-pointer transition-all duration-500 group-hover:top-0 top-[105%] left-1/2 -translate-x-1/2 absolute `}
         onClick={() => {
           (index>=0) && setActive(index);
         }}

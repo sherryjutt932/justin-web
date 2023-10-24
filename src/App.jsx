@@ -1,7 +1,10 @@
-import Hero from "./components/Hero/index.jsx";
+import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 import "./App.css";
-import { useEffect } from "react";
+
+import Hero from "./components/Hero/index.jsx";
+import AboutUs from "./components/AboutUs/index.jsx";
+
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -21,15 +24,13 @@ gsap.ticker.lagSmoothing(0)
   }, []);
 
   return (
-    <div className="App font-NohemiL bg-main">
+    <main className="App font-NohemiL bg-main">
       <Hero />
-      <div className="min-h-screen p-24">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora
-        reiciendis molestias placeat, quae, consectetur cum quo recusandae magni
-        quam libero laborum perspiciatis incidunt deleniti facere architecto
-        culpa at facilis aperiam?
+      <AboutUs />
+      <div className="min-h-screen bg-black w-full">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, minima earum eum itaque harum iusto delectus exercitationem eligendi aliquid quae accusantium dolore dolores, molestiae quia, voluptatem quo repellendus sed quis.
       </div>
-    </div>
+    </main>
   );
 }
 

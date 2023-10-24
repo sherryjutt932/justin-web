@@ -14,7 +14,7 @@ const Head = forwardRef(({ theme }, ref) => {
           ref={ref}
           className={clsx(
             theme === "dark" ? "bg-sec" : "bg-dark",
-            "w-[4rem] aspect-square inline-block rounded-full align-baseline"
+            "w-[4rem] h-[4rem] aspect-square inline-block rounded-full align-baseline"
           )}
         ></span>
         nline{" "}
@@ -38,14 +38,20 @@ const Head = forwardRef(({ theme }, ref) => {
               accessible to address any inquiries.
             </p>
             <a
-              className="mt-4 block font-semibold underline underline-offset-8 uppercase"
+              className="group mt-4 font-semibold uppercase leading-loose flex items-center"
               href="/"
             >
+              <div className="relative">
               Learn More
+              <div className={clsx(
+                  theme === "dark" ? "bg-light" : "bg-dark",
+                  "group-hover:w-0 transition-all duration-500 absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] w-full "
+                )}></div>
+              </div>
               <button
                 className={clsx(
                   theme === "dark" ? "text-dark" : "",
-                  "h-9 border border-dark border-dashed bg-light ml-6 px-6 py-1 rounded-full"
+                  "group-hover:border-[#00000000] transition-all duration-500 h-9 border border-dark border-dashed bg-light ml-6 px-6 py-1 rounded-full"
                 )}
               >
                 <img src={greaterThen} alt="greaterthen" />
