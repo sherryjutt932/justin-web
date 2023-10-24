@@ -22,7 +22,7 @@ export default function AboutUs() {
         start: "top top",
         // end: () => "+=" + aboutSec.current.offsetWidth,
         scrub: true,
-        // pin: true,
+        pin: true,
       },
     });
   }, []);
