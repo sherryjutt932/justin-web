@@ -41,7 +41,7 @@ export default function Boxes() {
       trigger: boxesSec.current,
       start: "top 60%",
       end: "top 30%",
-      // scrub: true,
+      scrub: true,
       animation: tl,
     });
   }, []);

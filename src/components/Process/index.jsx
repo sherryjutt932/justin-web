@@ -10,7 +10,7 @@ export default function Index() {
 
   return (
     <section className="h-screen w-full relative text-light bg-dark flex flex-col">
-      <div className="w-full overflow-x-hidden py-6 m14:py-10">
+      <div className="w-full overflow-hidden py-6 m14:py-10">
         <Marquee speed={1}>
           <div>DISCOVER MORE</div>
           <img className="arrowRef mx-12" src={longArrowRight} alt="" />
