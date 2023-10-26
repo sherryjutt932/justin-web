@@ -4,6 +4,7 @@ import "./App.css";
 
 import Hero from "./components/Hero/index.jsx";
 import AboutUs from "./components/AboutUs/index.jsx";
+import Work from "./components/Work/index.jsx";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -27,6 +28,7 @@ gsap.ticker.lagSmoothing(0)
     <main className="App font-NohemiL bg-main">
       <Hero />
       <AboutUs />
+      <Work />
       <div className="min-h-screen bg-black w-full">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, minima earum eum itaque harum iusto delectus exercitationem eligendi aliquid quae accusantium dolore dolores, molestiae quia, voluptatem quo repellendus sed quis.
       </div>
