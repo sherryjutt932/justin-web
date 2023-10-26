@@ -24,18 +24,6 @@ export default function Work() {
         (detailRef.current.childNodes.length - 1),
     });
 
-    // if (workSec.current) {
-    //   tl.fromTo(
-    //     workSec.current,
-    //     {
-    //       yPercent: -100,
-    //     },
-    //     {
-    //       yPercent: 0,
-    //     },"a"
-    //   );
-    // }
-
     if (imgRef.current) {
       const imgArray = Array.from(imgRef.current.children);
 
@@ -141,7 +129,7 @@ export default function Work() {
         {/* heading */}
         <div className="px-16 2xl:px-32 pt-12 font-Satoshi text-xl flex justify-between absolute top-0 left-0 w-full h-fit">
           <div>
-            <span className="inline-block w-3 h-3 rounded-full bg-dark"></span>{" "}
+            <span className="inline-block w-3 h-3 rounded-full bg-dark mr-2"></span>
             Recent Work
           </div>
           <div>0{currentSec}</div>

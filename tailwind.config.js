@@ -32,7 +32,8 @@ module.exports = {
         gray: {
           DEFAULT: '#595959',
           "79": '#797979',
-          'c5':'#C5C5C5'
+          'c5':'#C5C5C5',
+          '97':'#979797'
         },
         "main": "#EAEAEA",
         "sec": "#FF2626",

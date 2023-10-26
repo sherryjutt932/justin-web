@@ -24,17 +24,7 @@ export default function AboutUs() {
       ease: "linear",
     });
 
-    // gsap.to(aboutSec.current, {
-    //   scrollTrigger: {
-    //     trigger: aboutSec.current,
-    //     start: "top top",
-    //     end: "bottom 1%",
-    //     pin: true,
-    //     pinSpacing: false,
-    //   },
-    // });
-
-    // GSAP animation for the horizontal scrolling
+    //GSAP animation for the horizontal scrolling
     gsap.timeline( {
       scrollTrigger: {
         trigger: aboutSec.current,
@@ -52,13 +42,13 @@ export default function AboutUs() {
     );
   }, []);
 
-
   return (
-    <section ref={aboutSec} className="w-full h-screen overflow-hidden bg-main z-10">
+    <section ref={aboutSec} 
+    className="w-full h-screen overflow-hidden bg-main">
       <div className=" heroSection h-screen w-full relative px-16 2xl:px-32 py-12 flex flex-col justify-between">
         {/* heading */}
         <div className="font-Satoshi text-xl">
-          <span className="inline-block w-3 h-3 rounded-full bg-dark"></span>{" "}
+          <span className="inline-block w-3 h-3 rounded-full bg-dark mr-2"></span>
           About us
         </div>
 
